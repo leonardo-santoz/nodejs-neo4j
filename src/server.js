@@ -33,7 +33,7 @@ app.get("/users", (request, response) => {
   session.run("MATCH(u:User) RETURN u.name, u.email").then((result) => {
     const users = result.records.map((res) => res._fields);
 
-    return response.json({ users });
+    return response.json(users);
   });
 });
 
